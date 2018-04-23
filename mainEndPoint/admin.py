@@ -11,4 +11,3 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Expense)
 class ExpenseAdmin(admin.ModelAdmin):
     list_display = ['label','category','amount','date']
-

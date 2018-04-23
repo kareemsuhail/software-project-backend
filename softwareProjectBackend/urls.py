@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from mainEndPoint.views import login,register,testLogin
+from mainEndPoint.BudgetViews import all_budgets
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/',register),
+    path('login/',login),
+    path('rest/test',testLogin),
+    path('rest/budgets',all_budgets)
+
 ]

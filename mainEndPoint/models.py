@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime
+from django.core import serializers
 
 # Create your models here.
 class Budget(models.Model):
@@ -10,6 +11,10 @@ class Budget(models.Model):
     end_date = models.DateField()
     balance = models.FloatField()
     amount = models.FloatField()
+
+    def as_json(self):
+
+        return serializers.serialize("json", self.get_queryset())
     def __str__(self):
         return self.name
 
