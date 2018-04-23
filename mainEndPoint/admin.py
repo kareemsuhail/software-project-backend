@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Category,Budget,Expense
 
 # Register your models here.
+admin.site.site_header = "wallet app"
 @admin.register(Budget)
 class BudgetAdmin(admin.ModelAdmin):
     list_display = ['name','owner','start_date','end_date','balance','amount']
