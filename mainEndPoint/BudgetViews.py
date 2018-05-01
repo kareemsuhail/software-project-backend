@@ -8,3 +8,5 @@ def all_budgets(request):
     budgets = Budget.objects.filter(owner=request.user)
     data = serializers.serialize('json',budgets)
     return HttpResponse(data)
+def get_budget(id):
+    budget = Budget.objects.get(pk=id)

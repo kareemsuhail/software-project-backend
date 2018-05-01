@@ -5,6 +5,7 @@ from django.conf import settings
 from django.shortcuts import HttpResponse
 import jwt
 @csrf_exempt
+@require_http_methods([ "POST"])
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
